@@ -65,7 +65,7 @@ body {
   background-size: 220px 220px;
   background-attachment: fixed;
   color: var(--ink);
-  line-height: 1.6;
+  line-height: 1.65;
   font-size: 16px;
 }
 
@@ -488,10 +488,12 @@ section.block {
   font-size: 1.15rem;
 }
 
-.theory-card p { margin: 0 0 10px; }
+.theory-card p { margin: 0 0 16px; }
 .theory-card p:last-child { margin-bottom: 0; }
-.theory-card ul { margin: 8px 0 0; padding-left: 20px; }
-.theory-card li { margin-bottom: 6px; }
+.theory-card ul { margin: 12px 0 16px; padding-left: 22px; }
+.theory-card ul:last-child { margin-bottom: 0; }
+.theory-card li { margin-bottom: 10px; }
+.theory-card li:last-child { margin-bottom: 0; }
 
 .stamp {
   display: inline-flex;
@@ -512,7 +514,7 @@ section.block {
 .stamp.c-coral  { background: var(--coral); }
 
 figure.book-figure {
-  margin: 18px 0 0;
+  margin: 20px 0 20px;
   background: var(--card);
   border-radius: 6px 22px 6px 22px;
   padding: 14px;
@@ -1057,20 +1059,23 @@ footer a { color: #ffd48a; }
 .fun-fact {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
   background: linear-gradient(135deg, #fff1de 0%, #fdeadb 100%);
   border: 2px dashed var(--coral);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
+  padding: 14px 18px;
   font-size: 0.92rem;
+  line-height: 1.6;
   color: var(--ink);
   margin: 16px 0 0;
 }
 
 .fun-fact svg.icon {
+  width: 20px;
+  height: 20px;
   color: var(--sun-dk);
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 .fun-fact strong { color: var(--coral-dk); }
