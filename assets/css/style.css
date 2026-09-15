@@ -46,24 +46,6 @@ body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: var(--paper);
-  background-image:
-    radial-gradient(circle at 8% 15%, rgba(123,79,160,0.95) 3px, transparent 3.2px),
-    radial-gradient(circle at 22% 45%, rgba(239,91,58,0.9) 2.6px, transparent 2.8px),
-    radial-gradient(circle at 38% 10%, rgba(46,196,196,0.9) 3px, transparent 3.2px),
-    radial-gradient(circle at 52% 32%, rgba(123,79,160,0.85) 2.2px, transparent 2.4px),
-    radial-gradient(circle at 66% 6%, rgba(255,178,56,0.95) 3.6px, transparent 3.8px),
-    radial-gradient(circle at 80% 40%, rgba(239,91,58,0.85) 2.6px, transparent 2.8px),
-    radial-gradient(circle at 92% 18%, rgba(46,196,196,0.9) 3px, transparent 3.2px),
-    radial-gradient(circle at 14% 70%, rgba(255,178,56,0.9) 2.2px, transparent 2.4px),
-    radial-gradient(circle at 30% 88%, rgba(123,79,160,0.9) 3.6px, transparent 3.8px),
-    radial-gradient(circle at 46% 64%, rgba(46,196,196,0.8) 2.6px, transparent 2.8px),
-    radial-gradient(circle at 60% 92%, rgba(239,91,58,0.9) 3px, transparent 3.2px),
-    radial-gradient(circle at 74% 74%, rgba(255,178,56,0.85) 2.2px, transparent 2.4px),
-    radial-gradient(circle at 88% 94%, rgba(123,79,160,0.85) 3px, transparent 3.2px),
-    radial-gradient(circle at 96% 58%, rgba(46,196,196,0.85) 2.6px, transparent 2.8px);
-  background-repeat: repeat;
-  background-size: 220px 220px;
-  background-attachment: fixed;
   color: var(--ink);
   line-height: 1.65;
   font-size: 16px;
@@ -76,6 +58,57 @@ a { color: var(--sky-dk); }
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+}
+
+/* ---------- Missiepad: kronkelend spoor met meebewegend raketje ---------- */
+
+.mission-trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.mission-trail-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mission-trail-svg path {
+  fill: none;
+  stroke: var(--coral);
+  stroke-width: 3;
+  stroke-dasharray: 2 15;
+  stroke-linecap: round;
+  opacity: 0.45;
+}
+
+.mission-trail-rocket {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%) rotate(180deg);
+  will-change: top, left;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.mission-trail-rocket svg.icon {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  stroke: none;
+  color: var(--coral);
+  filter: drop-shadow(0 3px 5px rgba(44,28,18,0.3));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-trail-rocket { transition: none !important; }
 }
 
 /* ---------- HERO: startraket ---------- */
