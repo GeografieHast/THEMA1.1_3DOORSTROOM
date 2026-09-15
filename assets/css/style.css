@@ -1006,6 +1006,29 @@ footer a { color: #ffd48a; }
 
 .no-atlas-tip strong { color: var(--grape-dk); }
 
+/* ---------- Wist-je-dat / fun fact ---------- */
+
+.fun-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: linear-gradient(135deg, #fff1de 0%, #fdeadb 100%);
+  border: 2px dashed var(--coral);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin: 16px 0 0;
+}
+
+.fun-fact svg.icon {
+  color: var(--sun-dk);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.fun-fact strong { color: var(--coral-dk); }
+
 /* ---------- Toegankelijkheid ---------- */
 
 a:focus-visible, button:focus-visible {
