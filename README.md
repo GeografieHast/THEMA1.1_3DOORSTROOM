@@ -14,7 +14,7 @@ shuttle met twee strap-on boosters i.p.v. de slanke vin-raket).
   jouw vraag, omdat de doorstroom-PDF die je aanleverde pas op p. 24 start
   en deze onderdelen niet bevat.
 - **Continenten/werelddelen**: 5 continenten / 8 werelddelen, zoals op de
-  3D/A-site — dit ondanks dat de doorstroom-PDF zelf 6 continenten en 6 of 7
+  3D/A-site. Dit ondanks dat de doorstroom-PDF zelf 6 continenten en 6 of 7
   werelddelen telt (Amerika soms gesplitst). Op jouw keuze bewust niet
   overgenomen.
 - **"De aarde biedt kansen" en "De mens creëert kansen"**: herschreven met
@@ -23,21 +23,23 @@ shuttle met twee strap-on boosters i.p.v. de slanke vin-raket).
   van de kortere opsomming per laag op de 3D/A-site.
 - **Nieuw kaartje "Grondstoffen en bevolkingsspreiding"**: gebaseerd op
   opdracht 3 uit de doorstroom-PDF (Siberië, Zuid-Nigeria, Australië,
-  België, Noorden van Canada) — het besluit dat er géén duidelijke
+  België, Noorden van Canada). Het besluit dat er géén duidelijke
   rechtstreekse relatie is tussen grondstoffen en bevolkingsdichtheid, wat
   in de 3D/A-versie niet aan bod komt.
 - **Extra oefeningen**: een reliëf-vraag over Mumbai/Tibet (opdracht 2), een
   juist/fout-vraag over grondstoffen, en een uitdagingsvraag die
   grondstoffen met klimaat combineert (Zuid-Nigeria vs. Siberië).
-- **Terugkoppelingsmechanismen**: toegevoegd nadat bleek dat dit wél op je echte toets voor dit hoofdstuk staat (positief/negatief, gekoppeld aan de ruimtelijke spreiding van de mens via een stads-/urbanisatievoorbeeld). Ik had hiervoor geen brontekst van je methode, dus dit stuk is zelf uitgeschreven volgens de standaardbetekenis van het begrip — controleer de formulering tegen je handboek/leerplan.
+- **Terugkoppelingsmechanismen**: toegevoegd nadat bleek dat dit wél op je echte toets voor dit hoofdstuk staat (positief/negatief, gekoppeld aan de ruimtelijke spreiding van de mens via een stads-/urbanisatievoorbeeld). Ik had hiervoor geen brontekst van je methode, dus dit stuk is zelf uitgeschreven volgens de standaardbetekenis van het begrip. Controleer de formulering tegen je handboek/leerplan.
 - **Extra oefenkaarten ter voorbereiding op de toets**: terugkoppeling, waarneming via nachtbeelden, terrasbouw en bodemkwaliteit, telkens anders geformuleerd dan de effectieve toetsvragen (niet gekopieerd), maar wel op hetzelfde niveau/type.
 - **Opdracht 1, 2 en 3 (p. 26-27)** staan als herkenbare, apart gelabelde oefeningen bij Kaartmissies (niet enkel verwerkt in de theorie):
   - Opdracht 1 hergebruikt de Australië-klimaatkaarten van de 3D/A-site (zelfde vaardigheid: klimaat + bevolking op de kaart).
-  - Opdracht 2 (Mumbai/Tibet) gebruikt twee **eigen, originele illustraties** (`assets/img/opdracht2_stad_kust.svg` en `assets/img/opdracht2_gebergte.svg`) in plaats van een omschrijving die het antwoord al verklapte: leerlingen herkennen de plaats eerst visueel, en verklaren pas daarna via reliëf. Geen foto's uit het handboek gebruikt (die hadden een watermerk over de hele pagina).
+  - Opdracht 2 (Mumbai/Tibet) gebruikt nu de echte, schone foto's uit het doorstroomboek (`assets/img/mumbai.png` en `assets/img/tibet.png`) in plaats van een omschrijving die het antwoord al verklapte: leerlingen herkennen de plaats eerst visueel, en verklaren pas daarna via reliëf.
   - Opdracht 3 (grondstoffentabel) is nu drie keuzevragen per gebied (dun-/dichtbevolkt, continent, werelddeel) in plaats van open tekstvelden, net als in het handboek. Het besluit ("is er een relatie tussen grondstoffen en bevolkingsspreiding?") staat er apart bij, ongewijzigd.
 - **`map-exercise.js`** is aangepast zodat een kaartoefening ook zonder afbeelding kan (voor opdracht 3, waar er geen kaart bij hoort).
+- **Extra echte foto's uit het doorstroomboek**: het nachtbeeld vanuit het ISS (bij "De aarde biedt kansen") en de terrasbouw-foto (bij "De mens creëert kansen"), beide schone versies zonder watermerk.
+- **Eigen visuele identiteit voorbij de hero**: een subtiel "sterrenveld" over de hele pagina in plaats van enkel in de hero, een gekleurde missiestrook bovenaan elke kaart, asymmetrische paneelhoeken in plaats van de volledig ronde kaarten van 3D/A, en een gestippelde onderlijn bij elke sectietitel. Zo blijft de site herkenbaar anders, ook verder naar beneden op de pagina.
 - **"Wist je dat?"**: een leuk weetje over Monaco (dichtstbevolkt, ruim 25.000 inw./km²) en Mongolië (dunst bevolkt, ca. 2 inw./km²) bij de theorie over bevolkingsspreiding.
-- **Positief/negatief ≠ goed/slecht**: expliciet toegevoegd bij de terugkoppelingstheorie, met een aparte juist/fout-oefenkaart die dat misverstand rechtstreeks test — een negatieve (dempende) terugkoppeling houdt het systeem net stabiel, een positieve (versterkende) kan het net uit evenwicht brengen.
+- **Positief/negatief ≠ goed/slecht**: expliciet toegevoegd bij de terugkoppelingstheorie, met een aparte juist/fout-oefenkaart die dat misverstand rechtstreeks test: een negatieve (dempende) terugkoppeling houdt systeem aarde net stabiel, een positieve (versterkende) kan het net uit evenwicht brengen.
 - De tabeloefeningen uit Test Jezelf 1 (opdracht 1, met een genummerde
   kaart) en Test Jezelf 2 (opdracht 6, coördinaten) zijn **niet**
   overgenomen: de ingevulde antwoorden in die PDF's bevatten fouten (o.a.
@@ -48,7 +50,7 @@ shuttle met twee strap-on boosters i.p.v. de slanke vin-raket).
 
 ## Publiceren op GitHub Pages
 
-1. Maak een nieuwe (of gebruik een bestaande) GitHub-repository — **niet**
+1. Maak een nieuwe (of gebruik een bestaande) GitHub-repository. **Niet**
    dezelfde repo als de 3D/A-site, anders overschrijven de bestanden elkaar.
 2. Upload alle bestanden en mappen uit deze zip naar de root van de
    repository (dus `index.html` en de map `assets/` komen rechtstreeks in

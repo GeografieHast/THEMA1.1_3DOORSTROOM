@@ -45,7 +45,22 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(1.5px 1.5px at 6% 12%, rgba(123,79,160,0.35) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 18% 38%, rgba(239,91,58,0.3) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 32% 8%, rgba(46,196,196,0.3) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 47% 28%, rgba(123,79,160,0.3) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 61% 6%, rgba(255,178,56,0.35) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 74% 34%, rgba(239,91,58,0.28) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 88% 14%, rgba(46,196,196,0.3) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 12% 62%, rgba(255,178,56,0.3) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 40% 78%, rgba(123,79,160,0.28) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 68% 68%, rgba(239,91,58,0.3) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 92% 86%, rgba(46,196,196,0.3) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 24% 94%, rgba(255,178,56,0.3) 100%, transparent 0);
+  background-repeat: repeat;
+  background-size: 480px 480px;
   color: var(--ink);
   line-height: 1.6;
   font-size: 16px;
@@ -426,8 +441,11 @@ section.block {
 
 .block h2 {
   font-size: 1.6rem;
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   color: var(--ink);
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 3px dashed var(--coral);
 }
 
 .block .block-intro {
@@ -445,10 +463,21 @@ section.block {
 
 .theory-card {
   background: var(--card);
-  border-radius: var(--radius);
-  padding: 22px 24px;
+  border-radius: 6px 26px 6px 26px;
+  padding: 26px 24px 22px;
   box-shadow: var(--shadow);
   position: relative;
+  overflow: hidden;
+}
+.theory-card::before,
+.exam-card::before,
+.map-mission::before,
+.quiz-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--coral) 0%, var(--sun) 50%, var(--grape) 100%);
 }
 
 .theory-card h3 {
@@ -482,7 +511,7 @@ section.block {
 figure.book-figure {
   margin: 18px 0 0;
   background: var(--card);
-  border-radius: var(--radius);
+  border-radius: 6px 22px 6px 22px;
   padding: 14px;
   box-shadow: var(--shadow-sm);
 }
@@ -536,7 +565,7 @@ figure.book-figure figcaption {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
-  border-radius: var(--radius);
+  border-radius: 6px 26px 6px 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -585,9 +614,11 @@ figure.book-figure figcaption {
 
 .quiz-box {
   background: var(--card);
-  border-radius: var(--radius);
+  border-radius: 6px 26px 6px 26px;
   box-shadow: var(--shadow);
-  padding: 28px;
+  padding: 32px 28px 28px;
+  position: relative;
+  overflow: hidden;
 }
 
 .quiz-progress {
@@ -749,10 +780,11 @@ figure.book-figure figcaption {
 
 .map-mission {
   background: var(--card);
-  border-radius: var(--radius);
+  border-radius: 6px 26px 6px 26px;
   box-shadow: var(--shadow);
-  padding: 26px;
+  padding: 30px 26px 26px;
   position: relative;
+  overflow: hidden;
 }
 
 .map-mission-title {
@@ -800,12 +832,21 @@ figure.book-figure figcaption {
 /* ---------- Samengevat ---------- */
 
 .samengevat {
-  background: linear-gradient(135deg, var(--mint) 0%, var(--sky) 100%);
+  background: linear-gradient(135deg, var(--grape) 0%, var(--coral) 100%);
   color: #fff;
-  border-radius: var(--radius);
+  border-radius: 6px 26px 6px 26px;
   padding: 28px 28px;
   text-align: center;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.samengevat::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--sun) 0%, var(--sky) 100%);
 }
 
 .samengevat .block-icon { margin-bottom: 10px; }
@@ -946,9 +987,11 @@ footer a { color: #ffd48a; }
 
 .exam-card {
   background: var(--card);
-  border-radius: var(--radius);
+  border-radius: 6px 26px 6px 26px;
   box-shadow: var(--shadow);
-  padding: 26px;
+  padding: 30px 26px 26px;
+  position: relative;
+  overflow: hidden;
 }
 
 .exam-type {
