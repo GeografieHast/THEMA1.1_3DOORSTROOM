@@ -29,9 +29,10 @@ shuttle met twee strap-on boosters i.p.v. de slanke vin-raket).
 - **Extra oefeningen**: een reliëf-vraag over Mumbai/Tibet (opdracht 2), een
   juist/fout-vraag over grondstoffen, en een uitdagingsvraag die
   grondstoffen met klimaat combineert (Zuid-Nigeria vs. Siberië).
-- Geen "terugkoppelingsmechanisme": dat begrip komt in de aangeleverde
-  pagina's van hoofdstuk 1.1 niet voor; het hoort vermoedelijk bij een later
-  hoofdstuk (koolstofcyclus/broeikaseffect), niet bij dit deel.
+- **Terugkoppelingsmechanismen**: toegevoegd nadat bleek dat dit wél op je echte toets voor dit hoofdstuk staat (positief/negatief, gekoppeld aan de ruimtelijke spreiding van de mens via een stads-/urbanisatievoorbeeld). Ik had hiervoor geen brontekst van je methode, dus dit stuk is zelf uitgeschreven volgens de standaardbetekenis van het begrip — controleer de formulering tegen je handboek/leerplan.
+- **Extra oefenkaarten ter voorbereiding op de toets**: terugkoppeling, waarneming via nachtbeelden, terrasbouw en bodemkwaliteit, telkens anders geformuleerd dan de effectieve toetsvragen (niet gekopieerd), maar wel op hetzelfde niveau/type.
+- **Opdracht 1, 2 en 3 (p. 26-27)** staan nu als herkenbare, apart gelabelde oefeningen bij Kaartmissies (niet enkel verwerkt in de theorie): opdracht 1 hergebruikt de Australië-klimaatkaarten van de 3D/A-site (zelfde vaardigheid: klimaat + bevolking), opdracht 2 (Mumbai/Tibet) en opdracht 3 (grondstoffentabel: Siberië, Zuid-Nigeria, westkust Australië, België, noorden van Canada) zijn tekstgebaseerd opgebouwd omdat ik geen schone kaartafbeeldingen had van die specifieke pagina's (wel wateropschrift-vrij, wel correcte antwoorden uit de PDF).
+- **Positief/negatief ≠ goed/slecht**: expliciet toegevoegd bij de terugkoppelingstheorie, met een aparte juist/fout-oefenkaart die dat misverstand rechtstreeks test — een negatieve (dempende) terugkoppeling houdt het systeem net stabiel, een positieve (versterkende) kan het net uit evenwicht brengen.
 - De tabeloefeningen uit Test Jezelf 1 (opdracht 1, met een genummerde
   kaart) en Test Jezelf 2 (opdracht 6, coördinaten) zijn **niet**
   overgenomen: de ingevulde antwoorden in die PDF's bevatten fouten (o.a.
