@@ -8,7 +8,15 @@
    raketpositie wordt berekend op basis van hoeveel er al gescrold is
    TEN OPZICHTE VAN de bovenkant van .wrap (niet van het hele document,
    want de hero en de footer erboven/eronder zouden anders de verhouding
-   scheeftrekken). */
+   scheeftrekken).
+
+   Belangrijk: bij elke opdracht/quizvraag verschijnt er, ZODRA de
+   bezoekersteller (counters.js) een antwoord terugkrijgt, een extra
+   regeltje "X leerlingen maakten dit al". Dat gebeurt asynchroon, dus de
+   paginahoogte kan nog een hele tijd na het laden veranderen. Een vaste
+   reeks hertekeningen (na 400ms, 1200ms...) ving dat niet altijd op. Een
+   ResizeObserver op .wrap merkt élke hoogteverandering op, hoe laat ook,
+   en hertekent dan meteen. */
 
 (function () {
   let pathEl = null;
@@ -70,18 +78,34 @@
     });
   }, { passive: true });
 
+  let resizeT = null;
   window.addEventListener("resize", () => {
-    window.clearTimeout(window._missionTrailResizeT);
-    window._missionTrailResizeT = window.setTimeout(buildTrail, 150);
+    window.clearTimeout(resizeT);
+    resizeT = window.setTimeout(buildTrail, 150);
   });
 
   document.addEventListener("DOMContentLoaded", buildTrail);
-  // Afbeeldingen en lettertypes kunnen de paginahoogte nog laten
-  // verschuiven nadat 'load' al gevuurd is, dus we herberekenen nog
-  // een paar keer met wat vertraging om dat op te vangen.
-  window.addEventListener("load", () => {
-    buildTrail();
-    window.setTimeout(buildTrail, 400);
-    window.setTimeout(buildTrail, 1200);
-  });
+  window.addEventListener("load", buildTrail);
+
+  // Vangt alle latere hoogteveranderingen op (o.a. de bezoekerstellers
+  // die pas na hun fetch een regeltje toevoegen), hoe laat ook.
+  if (typeof ResizeObserver !== "undefined") {
+    let roT = null;
+    const ro = new ResizeObserver(() => {
+      window.clearTimeout(roT);
+      roT = window.setTimeout(buildTrail, 60);
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrap = document.querySelector(".wrap");
+      if (wrap) ro.observe(wrap);
+    });
+  } else {
+    // Val terug op een vaste reeks hertekeningen voor (zeldzame) browsers
+    // zonder ResizeObserver.
+    window.addEventListener("load", () => {
+      window.setTimeout(buildTrail, 400);
+      window.setTimeout(buildTrail, 1200);
+      window.setTimeout(buildTrail, 3000);
+    });
+  }
 })();
