@@ -1,0 +1,1018 @@
+/* ==========================================================================
+   VERKENNINGSMISSIE: DE AARDE VANUIT DE RUIMTE (DOORSTROOM)
+   Nachtlancering / rode-planeet-thema: donkere dieptes, roest-oranje en
+   amber in plaats van de felle pastelkleuren van de 3D/A-site, met een
+   ander rakettype (shuttle met strap-on boosters i.p.v. slanke vin-raket).
+   Bewust duidelijk anders herkenbaar dan de 3D/A-versie.
+   Lettertype: Verdana overal (dyslexievriendelijk).
+   ========================================================================== */
+
+:root {
+  --deep2:  #170b1f;
+
+  --coral:  #ef5b3a;
+  --coral-dk:#c53d20;
+  --sun:    #ffb238;
+  --sun-dk: #dd8f14;
+  --mint:   #f2c14e;
+  --mint-dk:#cd9c2c;
+  --grape:  #7b4fa0;
+  --grape-dk:#583676;
+  --sky:    #2ec4c4;
+  --sky-dk: #1c9a9a;
+  --leaf:   #d1495b;
+  --leaf-dk:#a52f40;
+
+  --paper:  #fff7ed;
+  --card:   #ffffff;
+  --ink:    #2c1c12;
+  --ink-soft: #7a5c48;
+
+  --good:   #1c9a9a;
+  --bad:    #c53d20;
+
+  --radius: 22px;
+  --radius-sm: 14px;
+  --shadow: 0 12px 0 rgba(44,28,18,0.14), 0 16px 30px rgba(44,28,18,0.12);
+  --shadow-sm: 0 6px 0 rgba(44,28,18,0.12), 0 8px 18px rgba(44,28,18,0.10);
+
+  --maxw: 900px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--sky-dk); }
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- HERO: startraket ---------- */
+
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, var(--deep2) 0%, var(--grape) 45%, var(--coral) 100%);
+  overflow: hidden;
+  padding: 26px 20px 64px;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+}
+
+.hero::before { width: 90px; height: 90px; top: 12%; left: 8%; opacity: .35; }
+.hero::after  { width: 50px; height: 50px; top: 55%; left: 88%; opacity: .3; }
+
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, #fff 100%, transparent 0),
+    radial-gradient(2px 2px at 22% 65%, #fff 100%, transparent 0),
+    radial-gradient(3px 3px at 35% 30%, #fff 90%, transparent 0),
+    radial-gradient(2px 2px at 50% 75%, #fff 100%, transparent 0),
+    radial-gradient(2px 2px at 65% 18%, #fff 90%, transparent 0),
+    radial-gradient(3px 3px at 78% 55%, #fff 100%, transparent 0),
+    radial-gradient(2px 2px at 90% 30%, #fff 90%, transparent 0),
+    radial-gradient(2px 2px at 5% 85%, #fff 100%, transparent 0);
+  opacity: 0.8;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.badge-pill {
+  display: inline-block;
+  background: rgba(255,255,255,0.9);
+  color: var(--grape-dk);
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  transform: rotate(-2deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.1rem);
+  color: #fff;
+  margin: 0 0 14px;
+  text-shadow: 0 4px 0 rgba(0,0,0,0.12);
+  line-height: 1.1;
+}
+
+/* ---------- Generieke lijn-iconen (vervangen emoji overal) ---------- */
+
+svg.icon {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+/* ---------- Hero: maan + twinkelende sterren ---------- */
+
+.hero-stars {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.hero-moon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffcf9e, var(--coral-dk) 75%);
+  box-shadow: 0 0 16px rgba(239,91,58,0.55);
+  top: 16%;
+  left: 50%;
+  animation: orbit-moon 14s linear infinite;
+  z-index: 2;
+}
+
+@keyframes orbit-moon {
+  0%   { transform: translate(-160px, 0) scale(0.75); opacity: 0.55; }
+  50%  { transform: translate(150px, -26px) scale(1); opacity: 0.95; }
+  100% { transform: translate(-160px, 0) scale(0.75); opacity: 0.55; }
+}
+
+/* ---------- Hero: echte vliegende raket (SVG, interactief) ---------- */
+
+.rocket-scene {
+  position: absolute;
+  width: 58px;
+  height: 88px;
+  z-index: 3;
+  cursor: pointer;
+  animation: rocket-flight 11s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.18));
+}
+
+.rocket-scene:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+
+@keyframes rocket-flight {
+  0%   { left: 6%;  top: 62%; transform: rotate(-8deg); }
+  22%  { left: 26%; top: 14%; transform: rotate(10deg); }
+  45%  { left: 58%; top: 46%; transform: rotate(-6deg); }
+  68%  { left: 78%; top: 12%; transform: rotate(9deg); }
+  84%  { left: 46%; top: 68%; transform: rotate(-10deg); }
+  100% { left: 6%;  top: 62%; transform: rotate(-8deg); }
+}
+
+.rocket-scene.boost {
+  animation-duration: 3.2s;
+}
+
+.rocket-svg { width: 100%; height: 100%; overflow: visible; }
+
+.rocket-body { fill: #fdf1e2; }
+.rocket-body-stripe { fill: var(--coral); }
+.rocket-window { fill: var(--sky); }
+.rocket-window-inner { fill: rgba(255,255,255,0.6); }
+.rocket-fin { fill: var(--grape); }
+.rocket-nose { fill: var(--coral); }
+
+.rocket-flame {
+  fill: var(--sun);
+  transform-origin: 30px 68px;
+  animation: rocket-flicker 0.22s ease-in-out infinite alternate;
+}
+.rocket-flame-inner {
+  fill: var(--coral);
+  animation-duration: 0.16s;
+}
+
+@keyframes rocket-flicker {
+  0%   { transform: scaleY(0.82) scaleX(0.9); opacity: 0.85; }
+  100% { transform: scaleY(1.18) scaleX(1.06); opacity: 1; }
+}
+
+.rocket-scene.boost .rocket-flame {
+  animation-duration: 0.09s;
+}
+.rocket-scene.boost .rocket-flame-inner {
+  animation-duration: 0.06s;
+}
+
+.exhaust {
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 1px;
+  height: 1px;
+}
+
+.exhaust span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  animation: exhaust-puff 1s ease-out infinite;
+}
+
+.exhaust span:nth-child(1) { animation-delay: 0s; margin-left: -8px; }
+.exhaust span:nth-child(2) { animation-delay: 0.25s; margin-left: -2px; }
+.exhaust span:nth-child(3) { animation-delay: 0.5s; margin-left: 3px; }
+.exhaust span:nth-child(4) { animation-delay: 0.75s; margin-left: -5px; }
+
+.rocket-scene.boost .exhaust span {
+  animation-duration: 0.45s;
+}
+
+@keyframes exhaust-puff {
+  0%   { transform: translateY(0) scale(1); opacity: 0.9; }
+  100% { transform: translateY(30px) scale(0.15); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-moon, .rocket-scene, .rocket-flame, .rocket-flame-inner, .exhaust span, .hero-stars {
+    animation: none !important;
+  }
+}
+
+.hero p {
+  color: #fff;
+  font-size: 1.1rem;
+  max-width: 60ch;
+  margin: 0 auto 28px;
+  opacity: 0.96;
+}
+
+.hero-cta {
+  display: inline-flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---------- Knoppen: chunky & bouncy ---------- */
+
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 26px;
+  cursor: pointer;
+  background: var(--coral);
+  color: #fff;
+  box-shadow: 0 6px 0 var(--coral-dk);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn:hover { filter: brightness(1.05); }
+.btn:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--coral-dk); }
+
+.btn.alt { background: var(--sun); color: var(--ink); box-shadow: 0 6px 0 var(--sun-dk); }
+.btn.alt:active { box-shadow: 0 2px 0 var(--sun-dk); }
+
+.btn.secondary {
+  background: #fff;
+  color: var(--grape-dk);
+  box-shadow: 0 6px 0 #ecd9bd;
+}
+.btn.secondary:active { box-shadow: 0 2px 0 #ecd9bd; }
+
+.btn:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; transform: none; }
+
+/* ---------- Missie-navigatie chips (in-page) ---------- */
+
+.mission-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.mission-nav a {
+  text-decoration: none;
+  background: rgba(255,255,255,0.85);
+  color: var(--ink);
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 7px 14px 7px 8px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.mission-nav a:hover,
+.mission-nav a:focus-visible {
+  transform: translateY(-3px) rotate(-1.5deg);
+  box-shadow: 0 10px 0 rgba(36,34,58,0.14), 0 14px 22px rgba(36,34,58,0.14);
+}
+
+/* ---------- Secties ---------- */
+
+main { display: block; padding-bottom: 20px; }
+
+section.block {
+  padding: 46px 0;
+}
+
+.block-head {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.block-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* ---------- Sticker-badges: kleurrijke rondjes achter de iconen ---------- */
+
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.icon-badge svg.icon { stroke-width: 2.3; }
+
+.badge-sky           { background: var(--sky-dk); }
+.badge-grape         { background: var(--grape-dk); }
+.badge-coral         { background: var(--coral-dk); }
+.badge-leaf          { background: var(--leaf-dk); }
+.badge-sun           { background: var(--sun-dk); }
+.badge-coral-bright  { background: var(--coral); }
+
+.block-icon .icon-badge {
+  width: 62px;
+  height: 62px;
+  transform: rotate(-5deg);
+  transition: transform 0.25s ease;
+}
+.block-icon .icon-badge svg.icon { width: 28px; height: 28px; }
+.block:hover .block-icon .icon-badge { transform: rotate(3deg) scale(1.05); }
+
+.mission-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.mission-nav .icon-badge {
+
+  width: 24px;
+  height: 24px;
+  transform: rotate(-4deg);
+  transition: transform 0.2s ease;
+}
+.mission-nav .icon-badge svg.icon { width: 13px; height: 13px; }
+.mission-nav a:hover .icon-badge { transform: rotate(8deg) scale(1.12); }
+
+.map-mission-title .icon-badge {
+  width: 34px;
+  height: 34px;
+  transform: rotate(-4deg);
+}
+.map-mission-title .icon-badge svg.icon { width: 18px; height: 18px; }
+
+.atlas-tip .icon-badge,
+.no-atlas-tip .icon-badge {
+  width: 30px;
+  height: 30px;
+  margin-top: 1px;
+  transform: rotate(-4deg);
+}
+.atlas-tip .icon-badge svg.icon,
+.no-atlas-tip .icon-badge svg.icon { width: 16px; height: 16px; }
+
+.block h2 {
+  font-size: 1.6rem;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.block .block-intro {
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+/* ---------- Logboek / theorie kaarten ---------- */
+
+.theory-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.theory-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.theory-card h3 {
+  margin: 10px 0 10px;
+  font-size: 1.15rem;
+}
+
+.theory-card p { margin: 0 0 10px; }
+.theory-card p:last-child { margin-bottom: 0; }
+.theory-card ul { margin: 8px 0 0; padding-left: 20px; }
+.theory-card li { margin-bottom: 6px; }
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 999px;
+  color: #fff;
+  transform: rotate(-2deg);
+}
+
+.stamp.c-sky    { background: var(--sky); }
+.stamp.c-leaf   { background: var(--leaf); }
+.stamp.c-grape  { background: var(--grape); }
+.stamp.c-sun    { background: var(--sun-dk); }
+.stamp.c-coral  { background: var(--coral); }
+
+figure.book-figure {
+  margin: 18px 0 0;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+figure.book-figure img { border-radius: 12px; }
+
+figure.book-figure figcaption {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.two-col {
+  display: grid;
+  gap: 18px;
+}
+
+@media (min-width: 700px) {
+  .two-col { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Flashcards: stickervibe ---------- */
+
+.flashcard-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.flashcard {
+  width: 100%;
+  max-width: 480px;
+  height: 230px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(.4,.2,.2,1);
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+
+.flashcard-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.flashcard-front {
+  background: linear-gradient(135deg, var(--grape) 0%, var(--sky) 100%);
+  color: #fff;
+}
+
+.flashcard-back {
+  background: #fff;
+  color: var(--ink);
+  transform: rotateY(180deg);
+  font-size: 1.02rem;
+  font-weight: normal;
+  border: 3px dashed var(--mint);
+}
+
+.flashcard-hint {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-weight: bold;
+}
+
+.flashcard-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.flashcard-counter {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: bold;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* ---------- Quiz: raket-voortgang ---------- */
+
+.quiz-box {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.quiz-progress {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.quiz-progress-bar {
+  position: relative;
+  height: 14px;
+  border-radius: 999px;
+  background: #f2e2cf;
+  overflow: visible;
+  margin-bottom: 26px;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--mint), var(--sky));
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.quiz-fill-rocket {
+  position: absolute;
+  right: -13px;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--sky-dk);
+  animation: quiz-rocket-wobble 1.3s ease-in-out infinite;
+}
+
+.quiz-fill-rocket .rocket-flame {
+  fill: var(--sun);
+  transform-origin: 12px 20px;
+  animation: rocket-flicker 0.2s ease-in-out infinite alternate;
+}
+
+@keyframes quiz-rocket-wobble {
+  0%, 100% { transform: translateY(-50%) rotate(88deg); }
+  50%      { transform: translateY(-50%) rotate(92deg); }
+}
+
+.quiz-question {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin: 0 0 18px;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.quiz-option {
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 13px 18px;
+  border-radius: var(--radius-sm);
+  border: 3px solid #f2e2cf;
+  background: #fffaf2;
+  cursor: pointer;
+  color: var(--ink);
+  box-shadow: 0 4px 0 #f2e2cf;
+  transition: transform 0.08s ease;
+}
+
+.quiz-option:hover { border-color: var(--grape); transform: translateY(-2px); }
+
+.quiz-option.correct {
+  border-color: var(--good);
+  background: #e2f5f0;
+  color: var(--good);
+  font-weight: bold;
+  box-shadow: 0 4px 0 var(--good);
+}
+
+.quiz-option.incorrect {
+  border-color: var(--bad);
+  background: #fdeae4;
+  color: var(--bad);
+  font-weight: bold;
+  box-shadow: 0 4px 0 var(--bad);
+}
+
+.quiz-option:disabled { cursor: default; }
+
+.quiz-feedback {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.98rem;
+  font-weight: bold;
+  display: none;
+}
+
+.quiz-feedback.show { display: block; }
+.quiz-feedback.good { background: #e2f5f0; color: var(--good); }
+.quiz-feedback.bad { background: #fdeae4; color: var(--bad); }
+
+.quiz-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.quiz-score {
+  text-align: center;
+  padding: 20px 10px 10px;
+}
+
+.quiz-score .stars {
+  font-size: 2.4rem;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.score-star {
+  color: #ede0cf;
+  animation: star-pop 0.5s ease backwards;
+}
+.score-star.filled { color: var(--sun-dk); }
+.score-star:nth-child(1) { animation-delay: 0.05s; }
+.score-star:nth-child(2) { animation-delay: 0.2s; }
+.score-star:nth-child(3) { animation-delay: 0.35s; }
+
+@keyframes star-pop {
+  0%   { transform: scale(0.3) rotate(-15deg); opacity: 0; }
+  70%  { transform: scale(1.15) rotate(4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); }
+}
+
+.quiz-score .big {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: var(--grape-dk);
+}
+
+.quiz-score p { color: var(--ink-soft); font-weight: bold; }
+
+.score-mood {
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: -0.3em;
+  color: var(--sky-dk);
+}
+
+/* ---------- Kaartmissies ---------- */
+
+.map-mission {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+  position: relative;
+}
+
+.map-mission-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+
+
+.map-exercise img {
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+  border: 3px solid #f2e2cf;
+}
+
+.map-item {
+  padding: 18px 0;
+  border-top: 2px dashed #f2e2cf;
+}
+
+.map-item:first-of-type { border-top: none; padding-top: 0; }
+
+.map-item-q {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.map-item .quiz-options { margin-bottom: 0; }
+
+.map-item-result {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  display: none;
+}
+
+.map-item-result.show { display: block; }
+.map-item-result.good { color: var(--good); }
+.map-item-result.bad { color: var(--bad); }
+
+/* ---------- Samengevat ---------- */
+
+.samengevat {
+  background: linear-gradient(135deg, var(--mint) 0%, var(--sky) 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 28px 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.samengevat .block-icon { margin-bottom: 10px; }
+.samengevat h3 { margin: 0 0 10px; color: #fff; font-size: 1.3rem; }
+.samengevat p { margin: 0 auto; color: #fff3e6; max-width: 60ch; }
+
+/* ---------- Footer ---------- */
+
+footer {
+  background: var(--deep2);
+  color: #cbb49a;
+  padding: 34px 20px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+footer a { color: #ffd48a; }
+
+.visit-counter {
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: #cbb49a;
+}
+
+.curriculum-note {
+  font-size: 0.68rem;
+  opacity: 0.55;
+  margin-top: 10px;
+}
+
+/* ---------- Examenstijl: kort antwoord, open vraag, rangschikken ---------- */
+
+.short-answer-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.short-answer-input {
+  flex: 1;
+  min-width: 180px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 3px solid #f2e2cf;
+  background: #fffaf2;
+  color: var(--ink);
+}
+
+.short-answer-input:focus {
+  outline: none;
+  border-color: var(--grape);
+}
+
+.open-answer-box {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.98rem;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 3px solid #f2e2cf;
+  background: #fffaf2;
+  color: var(--ink);
+  resize: vertical;
+  margin-top: 4px;
+}
+
+.open-answer-box:focus {
+  outline: none;
+  border-color: var(--grape);
+}
+
+.open-model-answer {
+  margin-top: 14px;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: #fdeadb;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  display: none;
+}
+
+.open-model-answer.show { display: block; }
+
+.open-hint {
+  background: #fff1de;
+  border-left: 4px solid var(--sun-dk);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  display: none;
+}
+
+.open-hint.show { display: block; }
+
+.ranking-list {
+  list-style: none;
+  margin: 14px 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffaf2;
+  border: 3px solid #f2e2cf;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-weight: bold;
+}
+
+.ranking-controls { display: flex; gap: 6px; }
+
+.ranking-btn {
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  background: var(--sky);
+  color: #fff;
+}
+
+.ranking-btn:hover { background: var(--sky-dk); }
+.ranking-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* ---------- Examenoefening kaarten ---------- */
+
+.exam-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+
+.exam-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: none;
+  color: #fff;
+  background: var(--grape);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+/* ---------- Opdracht-teller: klein, niet storend ---------- */
+
+.missie-counter {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-weight: normal;
+}
+
+/* ---------- Atlastip ---------- */
+
+.atlas-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff1de;
+  border: 2px dashed var(--sun-dk);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+
+.atlas-tip strong { color: var(--sun-dk); }
+
+.no-atlas-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fdeadb;
+  border: 2px dashed var(--grape);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+
+.no-atlas-tip strong { color: var(--grape-dk); }
+
+/* ---------- Toegankelijkheid ---------- */
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--sun-dk);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

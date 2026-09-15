@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verkenningsmissie: De aarde vanuit de ruimte (doorstroom)</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+<symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6c-1.8-1.3-4.6-1.7-8-1v13c3.4-.7 6.2-.3 8 1 1.8-1.3 4.6-1.7 8-1V5c-3.4-.7-6.2-.3-8 1z"/><path d="M12 6v13"/></symbol>
+<symbol id="icon-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="9" rx="2" transform="rotate(-8 9.5 11.5)"/><rect x="7" y="9" width="14" height="10" rx="2"/></symbol>
+<symbol id="icon-brain" viewBox="0 0 24 24"><path d="M9.5 4A3 3 0 0 0 7 8.5 2.7 2.7 0 0 0 6 13.7 3 3 0 0 0 9 18h.5V4z"/><path d="M14.5 4A3 3 0 0 1 17 8.5a2.7 2.7 0 0 1 1 5.2A3 3 0 0 1 15 18h-.5V4z"/><path d="M9.5 9h1M13.5 9h1M9.5 13.5h1M13.5 13.5h1"/></symbol>
+<symbol id="icon-map" viewBox="0 0 24 24"><path d="M9 4 3 6v15l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v15M15 6v15"/></symbol>
+<symbol id="icon-pencil" viewBox="0 0 24 24"><path d="M4 20l1-4.2L15.8 5 19 8.2 8.2 19 4 20z"/><path d="M14 6.2 17.8 10"/></symbol>
+<symbol id="icon-flame" viewBox="0 0 24 24"><path d="M12 2c1.6 2.6-.6 4.2-.6 7A2.6 2.6 0 0 0 14 11.6c1.4 0 2.4-1 2.4-2.4 2 2.2 2.8 5.4.7 8.3-1.4 2-3.7 2.5-5.1 2.5-3 0-6-2-6-6.2 0-4 3-6.2 4.6-9.8.2-.6.5-1.4 1.4-2z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></symbol>
+<symbol id="icon-satellite" viewBox="0 0 24 24"><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><rect x="1.3" y="2.3" width="5" height="3" rx="0.6" transform="rotate(45 3.8 3.8)"/><rect x="17.7" y="18.7" width="5" height="3" rx="0.6" transform="rotate(45 20.2 20.2)"/><path d="m6 6 2.6 2.6M18 18l-2.6-2.6M12 9.5V6M14.5 12H18"/><circle cx="19" cy="6" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-cloud" viewBox="0 0 24 24"><path d="M7.5 18a4 4 0 0 1-.6-7.95A5 5 0 0 1 16.4 8.2 4.4 4.4 0 0 1 16.5 18h-9z"/></symbol>
+<symbol id="icon-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 3 17.5c1-.35 1-1.8-.1-2.05a1.6 1.6 0 0 1 .3-3.15h.6A3.2 3.2 0 0 0 19 12.2C19 7.2 16 3 12 3z"/><circle cx="8" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="8" cy="14.5" r="1" fill="currentColor" stroke="none"/><circle cx="11.5" cy="17" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11l4.5-2.5z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-layers" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></symbol>
+<symbol id="icon-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.3"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><path d="M14.7 14.3c2 .2 3.8 2 3.8 5.7"/></symbol>
+<symbol id="icon-building" viewBox="0 0 24 24"><rect x="4" y="9" width="8" height="12"/><rect x="12.5" y="4" width="6.5" height="17"/><path d="M6.5 12h1M9.5 12h1M6.5 15h1M9.5 15h1M6.5 18h1M9.5 18h1M15 7h1M17.5 7h1M15 10h1M17.5 10h1M15 13h1M17.5 13h1"/></symbol>
+<symbol id="icon-city" viewBox="0 0 24 24"><rect x="2.5" y="11" width="4" height="10"/><rect x="7.5" y="6" width="4" height="15"/><rect x="12.5" y="13" width="4" height="8"/><rect x="17.5" y="9" width="3.5" height="12"/><circle cx="18.5" cy="4" r="1.6" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></symbol>
+<symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.6-5 4.5 1.5 6.6L12 16.9 6 20.3l1.5-6.6-5-4.5 6.6-.6L12 2.5z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-rocket-mini" viewBox="0 0 24 24"><path d="M12 2c3 3 4.2 8 3.4 13-.3 1.7-1.3 3-3.4 4-2.1-1-3.1-2.3-3.4-4C7.8 10 9 5 12 2z"/><circle cx="12" cy="9.5" r="1.7" fill="currentColor" stroke="none"/><path d="M8.6 15c-2 .3-3 1.8-3.2 3.8 1.8-.2 3.3-1 4-2.6M15.4 15c2 .3 3 1.8 3.2 3.8-1.8-.2-3.3-1-4-2.6" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-pickaxe" viewBox="0 0 24 24"><path d="M4 20 14 10"/><path d="M9 4c3 0 8 2 11 5-3 1.5-8 1-11-2-1.3-1.3-1.8-2-0-3z" fill="currentColor" stroke="none"/><circle cx="5.5" cy="18.5" r="2" fill="currentColor" stroke="none"/></symbol>
+</defs>
+</svg>
+
+<div class="hero">
+  <div class="hero-stars"></div>
+  <div class="hero-moon" aria-hidden="true"></div>
+  <div class="rocket-scene" id="heroRocketScene" tabindex="0" role="button" aria-label="Tik of duw op de raket voor een boost" title="Tik op de raket voor een boost!">
+    <div class="exhaust">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <svg class="rocket-svg" viewBox="0 0 72 96" aria-hidden="true">
+      <ellipse class="rocket-flame" cx="26" cy="82" rx="5" ry="12"/>
+      <ellipse class="rocket-flame" cx="46" cy="82" rx="5" ry="12"/>
+      <ellipse class="rocket-flame rocket-flame-inner" cx="26" cy="79" rx="2.6" ry="7"/>
+      <ellipse class="rocket-flame rocket-flame-inner" cx="46" cy="79" rx="2.6" ry="7"/>
+      <rect class="rocket-fin rocket-fin-l" x="15" y="42" width="11" height="36" rx="5" transform="rotate(-7 20.5 60)"/>
+      <rect class="rocket-fin rocket-fin-r" x="46" y="42" width="11" height="36" rx="5" transform="rotate(7 51.5 60)"/>
+      <path class="rocket-body" d="M36 4c8 9 11 28 8.5 46-1 7-3.8 12.5-8.5 15.5-4.7-3-7.5-8.5-8.5-15.5C25 32 28 13 36 4z"/>
+      <path class="rocket-nose" d="M36 4c4 4.5 6.5 11 7.8 18.5-2.4.8-5.1 1.3-7.8 1.3s-5.4-.5-7.8-1.3C29.5 15 32 8.5 36 4z"/>
+      <rect class="rocket-body-stripe" x="27.5" y="50" width="17" height="5" rx="2"/>
+      <polygon class="rocket-window" points="36,28 42,32.5 42,40.5 36,45 30,40.5 30,32.5"/>
+      <polygon class="rocket-window-inner" points="36,32 39,34.2 39,38 36,40 33,38 33,34.2"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <span class="badge-pill">Thema 1 · Hoofdstuk 1 · Doorstroom</span>
+    <h1>Verkenningsmissie: de aarde vanuit de ruimte</h1>
+    <p>Stap aan boord voor de doorstroomversie van deze missie: hoe ziet de aarde eruit vanuit de ruimte, en waarom wonen mensen niet overal even dicht op elkaar? Met dezelfde leerstof als 3D/A, maar met wat meer diepgang en verklaring.</p>
+    <div class="hero-cta">
+      <a href="#logboek"><button class="btn">Start de missie</button></a>
+      <a href="#quiz"><button class="btn alt">Meteen naar de quiz</button></a>
+    </div>
+    <div class="mission-nav">
+      <a href="#logboek"><span class="icon-badge badge-sky"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span> Logboek</a>
+      <a href="#flashcards"><span class="icon-badge badge-grape"><svg class="icon" aria-hidden="true"><use href="#icon-cards"></use></svg></span> Geheugenkaarten</a>
+      <a href="#quiz"><span class="icon-badge badge-coral"><svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg></span> Quiz</a>
+      <a href="#kaartmissies"><span class="icon-badge badge-leaf"><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg></span> Kaartmissies</a>
+      <a href="#examenstijl"><span class="icon-badge badge-sun"><svg class="icon" aria-hidden="true"><use href="#icon-pencil"></use></svg></span> Oefen zoals op de toets</a>
+      <a href="#uitdaging"><span class="icon-badge badge-coral-bright"><svg class="icon" aria-hidden="true"><use href="#icon-flame"></use></svg></span> Uitdaging</a>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- THEORIE -->
+  <section class="block" id="logboek">
+    <div class="block-head">
+      <span class="block-icon"><span class="icon-badge badge-sky"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span></span>
+      <h2>Missielogboek</h2>
+      <p class="block-intro">De belangrijkste ontdekkingen uit dit hoofdstuk, verzameld tijdens de vlucht.</p>
+    </div>
+
+    <div class="theory-grid">
+      <div class="theory-card">
+        <span class="stamp c-sky"><svg class="icon" aria-hidden="true"><use href="#icon-cloud"></use></svg> Atmosfeer</span>
+        <h3>De atmosfeer</h3>
+        <p>De atmosfeer is het mengsel van gassen rond de aarde. Op foto's vanuit het ISS zie je ze als een lichtblauwe, wazige laag. Samen vormen de gassen een beschermende laag: ze houden schadelijke straling van de zon tegen en laten het zichtbare licht door.</p>
+      </div>
+
+      <div class="theory-card">
+        <span class="stamp c-grape"><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg> Continenten &amp; werelddelen</span>
+        <h3>Continenten en werelddelen</h3>
+        <p>Vanuit de ruimte zie je vooral blauw: ongeveer 70% van het aardoppervlak is water (oceanen en zeeën), 30% is land. Een <strong>continent</strong> is een grote aaneengesloten landmassa, niet of nauwelijks verbonden met andere landmassa's. Er zijn vijf continenten: Eurazië, Amerika, Afrika, Antarctica en Australië.</p>
+        <p>Een <strong>werelddeel</strong> is een grote landmassa afgescheiden door natuurlijke elementen (oceanen, gebergten, rivieren), inclusief de eilanden errond. Zo behoort Madagaskar tot het werelddeel Afrika, maar niet tot het continent Afrika. Er zijn acht werelddelen: Europa, Noord-Amerika, Centraal- of Midden-Amerika, Zuid-Amerika, Afrika, Azië, Antarctica en Oceanië.</p>
+      </div>
+
+      <div class="theory-card">
+        <span class="stamp c-sun"><svg class="icon" aria-hidden="true"><use href="#icon-palette"></use></svg> Kleuren herkennen</span>
+        <h3>De verschillende kleuren aan het aardoppervlak</h3>
+        <p>Uit de kleuren op een satellietbeeld kan je landschapselementen afleiden:</p>
+        <ul>
+          <li><strong>Blauw</strong> → rivieren, zeeën, oceanen</li>
+          <li><strong>Groen</strong> → plantengroei</li>
+          <li><strong>Geelbruin</strong> → woestijnen</li>
+          <li><strong>Grijs</strong> → bebouwing; in steden zie je veel rechte vormen (straten, kanalen)</li>
+          <li><strong>Regelmatige vormen</strong> (vierkanten, rechthoeken, cirkels) → landbouwpercelen</li>
+        </ul>
+        <p>'s Nachts zie je vanuit het ISS een donkere aardbol met de verlichting van de grote steden.</p>
+        <figure class="book-figure" style="margin-top:14px;">
+          <img src="assets/img/las_vegas.png" alt="Satellietbeeld van de stad Las Vegas (grijs, met rechte straten) in de woestijn (geelbruin), met het waterreservoir Lake Mead rechts in beeld">
+          <figcaption>Satellietbeeld van Las Vegas (Verenigde Staten): de stad (grijs, met rechte straten) in de woestijn (geelbruin), met het waterreservoir Lake Mead rechts in beeld</figcaption>
+        </figure>
+      </div>
+
+      <div class="theory-card">
+        <span class="stamp c-leaf"><svg class="icon" aria-hidden="true"><use href="#icon-layers"></use></svg> Landschapsvormende lagen</span>
+        <h3>De fysischgeografische landschapsvormende lagen</h3>
+        <p>Een landschap bestaat uit verschillende lagen die elkaar beïnvloeden. Lagen die door de natuur ontstaan zijn, zonder ingrijpen van de mens, noem je <strong>fysischgeografische</strong> (of natuurlijke) landschapsvormende lagen. Er zijn er zes:</p>
+        <ul>
+          <li><strong>Natuurlijke vegetatie:</strong> de natuurlijke plantengroei op een plaats, zonder ingrijpen van de mens</li>
+          <li><strong>Klimaat:</strong> de gemiddelde temperatuur- en neerslagkenmerken van de lucht over een periode van 30 jaar</li>
+          <li><strong>Water:</strong> het water aan het aardoppervlak, in de lucht of in de ondergrond</li>
+          <li><strong>Reliëf:</strong> de afwisseling van natuurlijke hoogtes en laagtes in het landschap</li>
+          <li><strong>Bodem:</strong> het bovenste losse gedeelte van de aarde waarin de plantengroei en het gesteente elkaar beïnvloeden</li>
+          <li><strong>Ondergrond:</strong> het gesteente dat zich onder de bodem bevindt</li>
+        </ul>
+        <p>Lagen die door de mens gemaakt of veranderd zijn (bv. landbouw, bebouwing, wegen) noem je <strong>sociaalgeografische</strong> (of menselijke) landschapsvormende lagen. Elke laag die je in dit thema tegenkomt, is dus ofwel fysischgeografisch, ofwel sociaalgeografisch.</p>
+        <figure class="book-figure" style="margin-top:14px;">
+          <img src="assets/img/landschapslagen.png" alt="De zes fysischgeografische landschapsvormende lagen: natuurlijke vegetatie, klimaat, water, reliëf, bodem en ondergrond">
+          <figcaption>De fysischgeografische of natuurlijke landschapsvormende lagen</figcaption>
+        </figure>
+      </div>
+
+      <div class="theory-card">
+        <span class="stamp c-sky"><svg class="icon" aria-hidden="true"><use href="#icon-compass"></use></svg> Ligging</span>
+        <h3>Absolute en relatieve ligging</h3>
+        <p>Om een plaats correct te situeren, gebruik je twee soorten ligging:</p>
+        <ul>
+          <li><strong>Absolute ligging:</strong> de exacte plaats op aarde, ongeacht andere plaatsen. Bijvoorbeeld: het halfrond (noordelijk/zuidelijk, westelijk/oostelijk) of de coördinaten (breedtegraad en lengtegraad).</li>
+          <li><strong>Relatieve ligging:</strong> de plaats van iets ten opzichte van iets anders. Bijvoorbeeld: "ten oosten van Afrika" of "tussen twee landen".</li>
+        </ul>
+        <p>Je gebruikt deze begrippen op verschillende <strong>schaalniveaus</strong>: van een klein gebied (bv. je eigen gemeente) tot een land, een continent of de hele wereld. Hetzelfde punt kan je op elk niveau situeren: Hasselt ligt bijvoorbeeld in Limburg (lokaal niveau), in België (nationaal niveau), in Europa (continentaal niveau) en op het noordelijk halfrond (mondiaal niveau).</p>
+      </div>
+
+      <div class="theory-card">
+        <span class="stamp c-leaf"><svg class="icon" aria-hidden="true"><use href="#icon-people"></use></svg> Bevolkingsspreiding</span>
+        <h3>De aarde biedt kansen</h3>
+        <p>Een nachtbeeld van de aarde toont hoe onregelmatig de bevolking verspreid is: vooral de grote steden in Europa en Noord-Amerika lichten op, net als dichtbevolkte gebieden in India, Japan en de kuststeden van China. Dunbevolkte gebieden zoals het Amazonewoud, de Sahara en het Himalayagebergte zijn op zulke beelden nauwelijks verlicht. De <strong>bevolkingsdichtheid</strong> geeft weer hoeveel mensen er gemiddeld per km² wonen, en de mens woont vooral waar de aarde kansen biedt om te leven, voedsel te produceren en een inkomen te hebben. Die kansen worden voor een deel bepaald door de fysischgeografische landschapsvormende lagen hierboven.</p>
+        <p>Leg je de wereldkaart van de bevolkingsspreiding naast de klimaatkaarten, dan valt op dat dichtbevolkte gebieden vaak overeenkomen met gematigde en warme klimaten: daar is de temperatuur gunstig voor plantengroei. Maar binnen diezelfde klimaatzones bestaan grote verschillen. Warme en gematigde gebieden die droog zijn, laten weinig landbouw toe en zijn eerder dunbevolkt. Gebieden in warme klimaten met heel veel neerslag hebben dan weer een dichte, weelderige natuurlijke plantengroei waar menselijke activiteiten moeilijk zijn: het Amazonegebied en het Congobekken zijn daar voorbeelden van, ondanks hun warme, natte klimaat.</p>
+        <p>Reliëfrijke gebieden en steenachtige bodems bemoeilijken en beperken menselijke activiteiten. In gematigde gebieden is het klimaat op grote hoogte koud, daarom zijn de Alpen en de Himalaya op grote hoogte onbewoond. Maar in warme gebieden zijn die hoogtes juist koeler en aangenamer voor de mens, en trekken ze bevolking aan: voorbeelden van dichtbevolkte gebieden op grote hoogte vind je in de Andes, Burundi en Rwanda.</p>
+        <p>Ook de <strong>ondergrond</strong> speelt een rol: een ondergrond rijk aan grondstoffen (bv. ertsen, olie of gas) kan werkgelegenheid scheppen en zo bevolking aantrekken, al is dat verband minder rechtlijnig dan bij klimaat en reliëf (zie verder bij "Grondstoffen en bevolking").</p>
+      </div>
+
+      <div class="theory-card">
+        <span class="stamp c-coral"><svg class="icon" aria-hidden="true"><use href="#icon-building"></use></svg> De mens creëert kansen</span>
+        <h3>De mens creëert kansen</h3>
+        <p>Technologische vernieuwingen in de landbouw zorgen ervoor dat fysisch minder gunstige gebieden toch bewoond worden. Dankzij irrigatietechnieken is de droge Nijlvallei dicht bevolkt; in China en andere Aziatische landen zijn reliëfrijke gebieden door de aanleg van terrassen omgetoverd tot landbouwgebied.</p>
+        <p>Vanaf de 19de eeuw zorgde de industriële revolutie voor technologische vernieuwingen en beter transport. Daardoor gingen mensen zich vestigen in gebieden die voorheen nog niet bereikbaar waren: zo trokken miljoenen Europeanen naar de oostkust van Noord-Amerika, op zoek naar grondstoffen voor de industrie. Het handelsverkeer en het transport van grondstoffen en producten werd steeds belangrijker, wat zorgde voor de groei van steden aan de kust. Daarom vallen de meeste dichtbevolkte gebieden vandaag niet meer samen met de vruchtbaarste landbouwstreken.</p>
+      </div>
+
+      <div class="theory-card">
+        <span class="stamp c-sun"><svg class="icon" aria-hidden="true"><use href="#icon-pickaxe"></use></svg> Verdieping</span>
+        <h3>Grondstoffen en bevolkingsspreiding</h3>
+        <p>Je zou verwachten dat gebieden met veel grondstoffen (olie, gas, ertsen) ook dichtbevolkt zijn, omdat grondstoffen werkgelegenheid en inkomen kunnen bieden. In de praktijk klopt dat maar gedeeltelijk. Siberië en het noorden van Canada zijn bijvoorbeeld erg rijk aan grondstoffen (olie, gas, steenkool, ertsen), maar toch dunbevolkt: het koude klimaat en het moeilijk bereikbare reliëf wegen daar zwaarder door dan de aanwezigheid van grondstoffen. Omgekeerd is België dichtbevolkt terwijl het land nauwelijks grondstoffen heeft.</p>
+        <p>Er is met andere woorden <strong>geen duidelijke, rechtstreekse relatie</strong> tussen de vindplaats van grondstoffen en de bevolkingsspreiding. Klimaat, reliëf en bodem blijven de factoren die het meest bepalen of een gebied dun- of dichtbevolkt is; grondstoffen kunnen dat beeld wel versterken of net doorbreken, maar verklaren het niet op zichzelf.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section class="block" id="flashcards">
+    <div class="block-head">
+      <span class="block-icon"><span class="icon-badge badge-grape"><svg class="icon" aria-hidden="true"><use href="#icon-cards"></use></svg></span></span>
+      <h2>Geheugenkaarten</h2>
+      <p class="block-intro">Tik op een kaart om ze om te draaien en het antwoord te zien.</p>
+    </div>
+    <div id="flashcards-1"></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="block" id="quiz">
+    <div class="block-head">
+      <span class="block-icon"><span class="icon-badge badge-coral"><svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg></span></span>
+      <h2>Ruimtequiz</h2>
+      <p class="block-intro">Verdien je sterren: hoe meer juiste antwoorden, hoe verder je raket vliegt.</p>
+    </div>
+    <div class="quiz-box" id="quiz-1"></div>
+  </section>
+
+  <!-- KAARTMISSIES -->
+  <section class="block" id="kaartmissies">
+    <div class="block-head">
+      <span class="block-icon"><span class="icon-badge badge-leaf"><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg></span></span>
+      <h2>Kaartmissies</h2>
+      <p class="block-intro">Echte satellietbeelden en kaarten uit je handboek. Je mag je atlas erbij nemen wanneer je twijfelt.</p>
+    </div>
+
+    <div class="theory-grid">
+      <div class="map-mission">
+        <div class="map-mission-title"><span class="icon"><span class="icon-badge badge-sky"><svg class="icon" aria-hidden="true"><use href="#icon-globe"></use></svg></span></span> Missie 1: continenten en oceanen (1)</div>
+        <div class="no-atlas-tip"><span class="icon"><span class="icon-badge badge-grape"><svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg></span></span><span><strong>Zonder atlas:</strong> de continenten en oceanen moet je uit het hoofd kennen, ook op de toets.</span></div>
+        <div class="map-exercise" id="map-globes1"></div>
+      </div>
+
+      <div class="map-mission">
+        <div class="map-mission-title"><span class="icon"><span class="icon-badge badge-sky"><svg class="icon" aria-hidden="true"><use href="#icon-globe"></use></svg></span></span> Missie 2: Noord- en Zuid-Amerika</div>
+        <div class="no-atlas-tip"><span class="icon"><span class="icon-badge badge-grape"><svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg></span></span><span><strong>Zonder atlas:</strong> de continenten en oceanen moet je uit het hoofd kennen, ook op de toets.</span></div>
+        <div class="map-exercise" id="map-globes2"></div>
+      </div>
+
+      <div class="map-mission">
+        <div class="map-mission-title"><span class="icon"><span class="icon-badge badge-grape"><svg class="icon" aria-hidden="true"><use href="#icon-city"></use></svg></span></span> Missie 3: verlichte steden 's nachts</div>
+        <div class="atlas-tip"><span class="icon"><span class="icon-badge badge-sun"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span></span><span><strong>Atlas-tip:</strong> zoek de steden op met de kaart van Azië in je atlas.</span></div>
+        <div class="map-exercise" id="map-nightlights"></div>
+      </div>
+
+      <div class="map-mission">
+        <div class="map-mission-title"><span class="icon"><span class="icon-badge badge-sky"><svg class="icon" aria-hidden="true"><use href="#icon-globe"></use></svg></span></span> Missie 4: Afrika vanuit de ruimte</div>
+        <div class="no-atlas-tip"><span class="icon"><span class="icon-badge badge-grape"><svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg></span></span><span><strong>Zonder atlas:</strong> continenten en werelddelen moet je uit het hoofd kennen.</span></div>
+        <div class="map-exercise" id="map-africa"></div>
+      </div>
+
+      <div class="map-mission">
+        <div class="map-mission-title"><span class="icon"><span class="icon-badge badge-sun"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg></span></span> Missie 5: klimaat &amp; bevolking in Australië</div>
+        <div class="atlas-tip"><span class="icon"><span class="icon-badge badge-sun"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span></span><span><strong>Atlas-tip:</strong> leg de klimaatkaart van Australië naast de wereldkaart van de bevolkingsdichtheid in je atlas om het verband te zien.</span></div>
+        <div class="two-col">
+          <div class="map-exercise" id="map-australia1"></div>
+          <div class="map-exercise" id="map-australia2"></div>
+        </div>
+        <div id="exam-australia-open" style="margin-top:18px;"></div>
+      </div>
+
+      <div class="map-mission">
+        <div class="map-mission-title"><span class="icon"><span class="icon-badge badge-coral-bright"><svg class="icon" aria-hidden="true"><use href="#icon-people"></use></svg></span></span> Missie 6: reliëf en bevolking</div>
+        <p style="margin-top:0;color:var(--ink-soft);">Mumbai (India) ligt in een vlak kustgebied. Tibet ligt hoog in het Himalayagebergte.</p>
+        <div id="exam-relief-1"></div>
+        <div id="exam-relief-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="samengevat">
+      <span class="block-icon"><span class="icon-badge badge-sky"><svg class="icon" aria-hidden="true"><use href="#icon-globe"></use></svg></span></span>
+      <h3>Samengevat</h3>
+      <p>Als je vanuit de ruimte naar de aarde kijkt, zie je de atmosfeer als een schil rond de aarde. De bevolking woont ongelijk verspreid over de aarde. Alle zes fysischgeografische landschapsvormende lagen (natuurlijke vegetatie, klimaat, water, reliëf, bodem en ondergrond) beïnvloeden samen die spreiding, al is het verband met grondstoffen minder rechtstreeks dan met klimaat en reliëf. De mens creëert daarnaast ook zelf bijkomende kansen.</p>
+    </div>
+  </section>
+
+  <!-- EXAMENSTIJL -->
+  <section class="block" id="examenstijl">
+    <div class="block-head">
+      <span class="block-icon"><span class="icon-badge badge-sun"><svg class="icon" aria-hidden="true"><use href="#icon-pencil"></use></svg></span></span>
+      <h2>Oefen zoals op de toets</h2>
+      <p class="block-intro">Bij een echte overhoring krijg je niet enkel meerkeuzevragen. Oefen hier ook met korte antwoorden, open vragen, juist/fout met verklaring, en rangschikken, net zoals op de toets.</p>
+    </div>
+
+    <div class="theory-grid">
+
+      <div class="exam-card">
+        <span class="exam-type">Kort antwoord</span>
+        <div class="no-atlas-tip"><span class="icon"><span class="icon-badge badge-grape"><svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg></span></span><span><strong>Zonder atlas:</strong> continenten moet je uit het hoofd kennen.</span></div>
+        <div id="exam-kort1"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Kort antwoord</span>
+        <div class="no-atlas-tip"><span class="icon"><span class="icon-badge badge-grape"><svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg></span></span><span><strong>Zonder atlas:</strong> continenten moet je uit het hoofd kennen.</span></div>
+        <div id="exam-kort2"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Woorden/plaatsen schikken</span>
+        <div class="atlas-tip"><span class="icon"><span class="icon-badge badge-sun"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span></span><span><strong>Atlas-tip:</strong> je kan je antwoord controleren met de themakaart van de bevolkingsdichtheid in je atlas.</span></div>
+        <div id="exam-ranking"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Lang antwoord</span>
+        <div id="exam-open1"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Lang antwoord</span>
+        <div id="exam-open2"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Juist of fout, verklaar je keuze</span>
+        <div id="exam-jf"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Juist of fout, verklaar je keuze</span>
+        <div id="exam-jf-grondstof"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Lang antwoord</span>
+        <div id="exam-open3"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Vaktaal</span>
+        <div id="exam-vak1"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Vaktaal</span>
+        <div id="exam-vak2"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Vaktaal</span>
+        <div id="exam-vak3"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Vaktaal</span>
+        <div id="exam-vak4"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UITDAGING -->
+  <section class="block" id="uitdaging">
+    <div class="block-head">
+      <span class="block-icon"><span class="icon-badge badge-coral-bright"><svg class="icon" aria-hidden="true"><use href="#icon-flame"></use></svg></span></span>
+      <h2>Uitdaging: nieuwe voorbeelden</h2>
+      <p class="block-intro">Pas wat je geleerd hebt toe op een nieuwe uitdaging.</p>
+    </div>
+
+    <div class="theory-grid">
+      <div class="exam-card">
+        <span class="exam-type">Lang antwoord, hogere moeilijkheidsgraad</span>
+        <div id="exam-uitdaging1"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Lang antwoord, hogere moeilijkheidsgraad</span>
+        <div id="exam-uitdaging2"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Vergelijken, hogere moeilijkheidsgraad</span>
+        <div id="exam-uitdaging3"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Onderscheid maken</span>
+        <div id="exam-uitdaging4"></div>
+      </div>
+
+      <div class="exam-card">
+        <span class="exam-type">Combineren van factoren, hogere moeilijkheidsgraad</span>
+        <div id="exam-uitdaging5"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Missiecontrole voor <em>Thema 1, Hoofdstuk 1: De aarde vanuit de ruimte — doorstroom</em>, samengesteld voor eigen lesgebruik.
+  <div class="visit-counter" id="visit-counter"><svg class="icon" aria-hidden="true"><use href="#icon-satellite"></use></svg> bezoekersteller laadt…</div>
+  <p class="curriculum-note">LPD 2, LPD 19 · MD 09.01, MD 09.08, MD 13.03</p>
+</footer>
+
+<script src="assets/js/counters.js"></script>
+<script src="assets/js/flashcards.js"></script>
+<script src="assets/js/quiz.js"></script>
+<script src="assets/js/map-exercise.js"></script>
+<script src="assets/js/examenstijl.js"></script>
+<script src="assets/js/hero-rocket.js"></script>
+<script>
+buildFlashcards(document.getElementById("flashcards-1"), {
+  cards: [
+    { front: "Wat is de atmosfeer?", back: "Het mengsel van gassen rond de aarde. Het houdt schadelijke zonnestraling tegen en laat zichtbaar licht door." },
+    { front: "Wat is een continent?", back: "Een grote aaneengesloten landmassa die niet of nauwelijks verbonden is met andere landmassa's. Er zijn er vijf: Eurazië, Amerika, Afrika, Antarctica en Australië." },
+    { front: "Wat is een werelddeel?", back: "Een grote landmassa afgescheiden door natuurlijke elementen (oceanen, gebergten, rivieren), inclusief de omliggende eilanden. Er zijn er acht: Europa, Noord-Amerika, Centraal- of Midden-Amerika, Zuid-Amerika, Afrika, Azië, Antarctica en Oceanië." },
+    { front: "Tot welk werelddeel behoort Madagaskar, en tot welk continent?", back: "Werelddeel Afrika, maar niet tot het continent Afrika (het is een eiland, geen deel van de aaneengesloten landmassa)." },
+    { front: "Amerika is één continent. In hoeveel werelddelen wordt het opgedeeld, en welke?", back: "Drie werelddelen: Noord-Amerika, Centraal- of Midden-Amerika, en Zuid-Amerika." },
+    { front: "Wat is een fysischgeografische (natuurlijke) landschapsvormende laag?", back: "Een laag die door de natuur ontstaan is, zonder ingrijpen van de mens, bv. klimaat, reliëf, bodem, water, ondergrond of natuurlijke vegetatie." },
+    { front: "Wat is een sociaalgeografische (menselijke) landschapsvormende laag?", back: "Een laag die door de mens gemaakt of veranderd is, bv. landbouw, bebouwing of wegen." },
+    { front: "Noem de zes fysischgeografische landschapsvormende lagen.", back: "Natuurlijke vegetatie, klimaat, water, reliëf, bodem en ondergrond." },
+    { front: "Wat is het verschil tussen bodem en ondergrond?", back: "De bodem is het bovenste losse gedeelte van de aarde waarin plantengroei en gesteente elkaar beïnvloeden. De ondergrond is het gesteente dat zich daaronder bevindt." },
+    { front: "Wat is klimaat, precies?", back: "De gemiddelde temperatuur- en neerslagkenmerken van de lucht over een periode van 30 jaar." },
+    { front: "Wat is absolute ligging?", back: "De exacte plaats op aarde, ongeacht andere plaatsen. Bijvoorbeeld het halfrond of de coördinaten." },
+    { front: "Wat is relatieve ligging?", back: "De plaats van iets ten opzichte van iets anders. Bijvoorbeeld 'ten oosten van Afrika' of 'tussen twee landen'." },
+    { front: "Noem vier schaalniveaus waarop je een plaats kan situeren, van klein naar groot.", back: "Lokaal (bv. je gemeente), nationaal (bv. je land), continentaal (bv. Europa) en mondiaal (bv. een halfrond of de hele wereld)." },
+    { front: "Welke kleur wijst op plantengroei op een satellietbeeld?", back: "Groen." },
+    { front: "Welke kleur wijst op woestijn op een satellietbeeld?", back: "Geelbruin." },
+    { front: "Waaraan herken je bebouwing/steden op een satellietbeeld?", back: "Aan de grijze kleur en de vele rechte vormen (straten, kanalen)." },
+    { front: "Wat is bevolkingsdichtheid?", back: "Het gemiddeld aantal mensen dat per km² in een gebied woont." },
+    { front: "Waarom zijn de gebieden rond de Amazone- en Congorivier dunbevolkt, ondanks het warme klimaat?", back: "Er valt heel veel neerslag, waardoor er een dichte, weelderige plantengroei is die menselijke activiteiten moeilijk maakt." },
+    { front: "Waarom zijn de Alpen en de Himalaya onbewoond op grote hoogte?", back: "Het reliëf maakt menselijke activiteiten moeilijk en het klimaat is er te koud." },
+    { front: "Geef een voorbeeld van dichtbevolkte hooggelegen gebieden in een warm klimaat.", back: "De Andes, Burundi en Rwanda: daar zijn de hoogtes koeler en aangenamer voor de mens." },
+    { front: "Wat maakt een bodem gunstig voor landbouw?", back: "Rijk aan voedingsstoffen en niet te droog of stenig, bv. leembodems." },
+    { front: "Hoe maakte de mens de droge Nijlvallei toch dichtbevolkt?", back: "Door irrigatietechnieken." },
+    { front: "Hoe maakt men reliëfrijke gebieden in China geschikt voor landbouw?", back: "Door terrasbouw." },
+    { front: "Waarom vallen de dichtstbevolkte gebieden vandaag niet meer altijd samen met de vruchtbaarste landbouwstreken?", back: "Door de industriële revolutie werden handel en transport belangrijker, waardoor vooral steden aan de kust groeiden." },
+    { front: "Is er een duidelijke, rechtstreekse relatie tussen de aanwezigheid van grondstoffen en de bevolkingsspreiding?", back: "Nee. Siberië en het noorden van Canada zijn bv. rijk aan grondstoffen maar dunbevolkt (te koud, moeilijk bereikbaar), terwijl België dichtbevolkt is zonder veel grondstoffen. Klimaat, reliëf en bodem wegen zwaarder door." }
+  ]
+});
+
+buildQuiz(document.getElementById("quiz-1"), {
+  questions: [
+    { q: "Wat is de atmosfeer?", options: ["Het mengsel van gassen rond de aarde", "Al het water op aarde", "Alle gesteenten waaruit de aarde bestaat", "Alle levende organismen samen"], correct: 0, explain: "De atmosfeer houdt schadelijke straling tegen en laat licht door." },
+    { q: "Hoeveel continenten zijn er?", options: ["4", "5", "6", "7"], correct: 1, explain: "Eurazië, Amerika, Afrika, Antarctica en Australië." },
+    { q: "Hoeveel werelddelen zijn er?", options: ["6", "7", "8", "9"], correct: 2, explain: "Europa, Noord-Amerika, Centraal- of Midden-Amerika, Zuid-Amerika, Afrika, Azië, Antarctica en Oceanië." },
+    { q: "Amerika is...", options: ["één continent, opgedeeld in drie werelddelen", "twee aparte continenten", "één werelddeel zonder continent", "geen continent, wel een werelddeel"], correct: 0, explain: "Noord-Amerika, Centraal- of Midden-Amerika en Zuid-Amerika zijn samen één continent, maar drie werelddelen." },
+    { q: "Madagaskar behoort tot...", options: ["het continent Afrika", "het werelddeel Afrika, niet het continent", "het continent Azië", "geen enkel werelddeel"], correct: 1, explain: "Een werelddeel omvat ook de eilanden rond het continent." },
+    { q: "Hoeveel fysischgeografische landschapsvormende lagen zijn er?", options: ["3", "4", "5", "6"], correct: 3, explain: "Natuurlijke vegetatie, klimaat, water, reliëf, bodem en ondergrond." },
+    { q: "Welke van deze lagen is sociaalgeografisch (menselijk) in plaats van fysischgeografisch (natuurlijk)?", options: ["Reliëf", "Landbouw", "Klimaat", "Ondergrond"], correct: 1, explain: "Landbouw is door de mens gemaakt, en dat maakt het een sociaalgeografische laag." },
+    { q: "Wat is het verschil tussen bodem en ondergrond?", options: ["Er is geen verschil", "De bodem is het bovenste losse gedeelte; de ondergrond is het gesteente eronder", "De ondergrond ligt boven de bodem", "Bodem gaat over water, ondergrond over reliëf"], correct: 1 },
+    { q: "'Australië ligt op het zuidelijk halfrond' is een voorbeeld van...", options: ["relatieve ligging", "absolute ligging", "een demografische indicator", "een sociaalgeografische laag"], correct: 1, explain: "Het halfrond is een vaste, exacte plaats op aarde, ongeacht andere plaatsen." },
+    { q: "'De Indische Oceaan ligt ten oosten van Afrika' is een voorbeeld van...", options: ["relatieve ligging", "absolute ligging", "een fysischgeografische laag", "een werelddeel"], correct: 0, explain: "Hier situeer je iets ten opzichte van iets anders." },
+    { q: "Op welk schaalniveau situeer je iets als je zegt 'Hasselt ligt in Limburg'?", options: ["Mondiaal niveau", "Continentaal niveau", "Lokaal niveau", "Klimaatniveau"], correct: 2, explain: "Een gemeente binnen een provincie situeren is lokaal niveau." },
+    { q: "Op welk schaalniveau situeer je iets als je zegt 'Afrika ligt op het zuidelijk en het noordelijk halfrond'?", options: ["Lokaal niveau", "Mondiaal niveau", "Gemeentelijk niveau", "Provinciaal niveau"], correct: 1, explain: "Een halfrond is een indeling van de hele aarde, dus mondiaal niveau." },
+    { q: "Wat geeft de bevolkingsdichtheid weer?", options: ["Het totale aantal inwoners van een land", "Hoeveel mensen er gemiddeld per km² wonen", "Hoeveel procent van een land bebouwd is", "De groeisnelheid van de bevolking"], correct: 1 },
+    { q: "Waarom is het gebied rond de Amazone dunbevolkt?", options: ["Het is er te koud", "Het reliëf is te steil", "De dichte plantengroei door veel neerslag maakt menselijke activiteit moeilijk", "Er is geen zoet water beschikbaar"], correct: 2 },
+    { q: "Welke bodem biedt de meeste kansen voor landbouw?", options: ["Een droge, stenige bodem", "Een vruchtbare leembodem", "Een bevroren bodem", "Een zoute bodem"], correct: 1 },
+    { q: "Hoe werd de droge Nijlvallei toch dichtbevolkt?", options: ["Door terrasbouw", "Door de aanleg van kustmoerassen", "Door irrigatietechnieken", "Door ontbossing"], correct: 2 },
+    { q: "Wat zorgde er sinds de 19de eeuw voor dat vooral kuststeden groeiden?", options: ["De klimaatverandering", "De industriële revolutie, met meer handel en transport", "Een daling van de bevolkingsdichtheid overal", "De aanleg van terrassen"], correct: 1 },
+    { q: "Siberië en het noorden van Canada zijn erg rijk aan grondstoffen, maar...", options: ["ook erg dichtbevolkt door die grondstoffen", "toch dunbevolkt, door klimaat en reliëf", "hebben geen enkele bevolking", "liggen niet op aarde"], correct: 1, explain: "Grondstoffen alleen verklaren de bevolkingsspreiding niet; klimaat en reliëf wegen zwaarder door." },
+    { q: "Wat besluit je over de relatie tussen grondstoffen en bevolkingsdichtheid?", options: ["Er is een sterk, rechtstreeks verband", "Er is geen duidelijke, rechtstreekse relatie", "Grondstoffen zijn de belangrijkste factor", "Grondstoffen bepalen enkel het klimaat"], correct: 1 }
+  ]
+});
+
+buildMapExercise(document.getElementById("map-globes1"), {
+  image: "assets/img/globe1_asia_australia.png",
+  alt: "Wereldbol met Azië en Australië, genummerd 1 t.e.m. 3",
+  items: [
+    { q: "Welk cijfer stelt Australië voor?", options: ["1", "2", "3"], correct: 0 },
+    { q: "Welk cijfer stelt de Indische Oceaan voor?", options: ["1", "2", "3"], correct: 1 },
+    { q: "Welk cijfer stelt Antarctica voor?", options: ["1", "2", "3"], correct: 2 },
+    { q: "Op welk halfrond ligt Australië volledig?", options: ["Het noordelijk halfrond", "Het zuidelijk halfrond"], correct: 1, explain: "Dit is absolute ligging." }
+  ]
+});
+
+const globeMid = document.createElement("div");
+globeMid.className = "map-exercise";
+globeMid.style.marginTop = "22px";
+document.getElementById("map-globes1").insertAdjacentElement("afterend", globeMid);
+buildMapExercise(globeMid, {
+  image: "assets/img/globe2_africa_eurasia.png",
+  alt: "Wereldbol met Afrika en Eurazië, genummerd 4 t.e.m. 6",
+  items: [
+    { q: "Welk cijfer stelt de Atlantische Oceaan voor?", options: ["4", "5", "6"], correct: 0 },
+    { q: "Welk cijfer stelt Afrika voor?", options: ["4", "5", "6"], correct: 1 },
+    { q: "Welk cijfer stelt Eurazië voor?", options: ["4", "5", "6"], correct: 2 }
+  ]
+});
+
+buildMapExercise(document.getElementById("map-globes2"), {
+  image: "assets/img/globe3_americas.png",
+  alt: "Wereldbol met Noord- en Zuid-Amerika, genummerd 7 t.e.m. 9",
+  items: [
+    { q: "Welk cijfer stelt de Grote Oceaan voor?", options: ["7", "8", "9"], correct: 0 },
+    { q: "Welk cijfer stelt Noord-Amerika voor?", options: ["7", "8", "9"], correct: 1 },
+    { q: "Welk cijfer stelt Zuid-Amerika voor?", options: ["7", "8", "9"], correct: 2 }
+  ]
+});
+
+buildMapExercise(document.getElementById("map-nightlights"), {
+  image: "assets/img/nightlights_asia.png",
+  alt: "Aziatische steden bij nacht, genummerd 10 t.e.m. 13",
+  items: [
+    { q: "Welk cijfer stelt New Delhi voor?", options: ["10", "11", "12", "13"], correct: 0 },
+    { q: "Welk cijfer stelt Tokyo voor?", options: ["10", "11", "12", "13"], correct: 1 },
+    { q: "Welk cijfer stelt Hongkong voor?", options: ["10", "11", "12", "13"], correct: 2 },
+    { q: "Welk cijfer stelt Bangkok voor?", options: ["10", "11", "12", "13"], correct: 3 }
+  ]
+});
+
+buildMapExercise(document.getElementById("map-africa"), {
+  image: "assets/img/africa_globe.png",
+  alt: "Satellietbeeld van Afrika vanuit de ruimte",
+  items: [
+    { q: "Welk continent zie je op dit satellietbeeld?", options: ["Zuid-Amerika", "Afrika", "Azië"], correct: 1 },
+    { q: "De evenaar loopt dwars door Afrika. Op welk(e) halfrond(en) ligt Afrika daardoor?", options: ["Enkel het noordelijk halfrond", "Enkel het zuidelijk halfrond", "Zowel het noordelijk als het zuidelijk halfrond"], correct: 2, explain: "Dit is absolute ligging: de vaste plaats van Afrika op aarde." },
+    { q: "De Indische Oceaan ligt ten opzichte van Afrika...", options: ["ten westen", "ten oosten", "ten noorden"], correct: 1 },
+    { q: "Welke oceaan ligt ten westen van Afrika?", options: ["De Grote Oceaan", "De Indische Oceaan", "De Atlantische Oceaan"], correct: 2, explain: "Dit is relatieve ligging: de plaats van de oceaan ten opzichte van Afrika." },
+    { q: "De groene kleur op dit beeld stelt vooral voor:", options: ["Het tropisch regenwoud van de Amazonerivier", "Het tropisch regenwoud van de Congorivier", "De Sahara"], correct: 1 },
+    { q: "De gele kleur op dit beeld stelt voor:", options: ["De Gobiwoestijn", "De Atacamawoestijn", "De Saharawoestijn"], correct: 2 }
+  ]
+});
+
+buildMapExercise(document.getElementById("map-australia1"), {
+  image: "assets/img/australia_climate1.png",
+  alt: "Klimaatkaart Australië: warme, gematigde en koude klimaatzone",
+  caption: "Klimaatzones (temperatuur)",
+  items: [
+    { q: "In welke klimaatzone ligt punt A?", options: ["Warme klimaatzone", "Gematigde klimaatzone", "Koude klimaatzone"], correct: 1 },
+    { q: "In welke klimaatzone ligt punt B?", options: ["Warme klimaatzone", "Gematigde klimaatzone", "Koude klimaatzone"], correct: 1 }
+  ]
+});
+
+buildMapExercise(document.getElementById("map-australia2"), {
+  image: "assets/img/australia_climate2.png",
+  alt: "Klimaatkaart Australië: droge en natte klimaatzone",
+  caption: "Klimaatzones (neerslag)",
+  items: [
+    { q: "Ligt punt A in een droge of natte klimaatzone?", options: ["Droge klimaatzone", "Natte klimaatzone"], correct: 1 },
+    { q: "Ligt punt B in een droge of natte klimaatzone?", options: ["Droge klimaatzone", "Natte klimaatzone"], correct: 0 }
+  ]
+});
+
+buildOpenReveal(document.getElementById("exam-australia-open"), {
+  q: "Bekijk beide klimaatkaarten opnieuw. Waar wonen de meeste mensen, bij punt A of bij punt B, en waarom?",
+  hint: "Vergelijk eerst de neerslag bij A en B. Wat heeft een gebied nodig om aan landbouw te kunnen doen?",
+  model: "Bij punt A wonen de meeste mensen. Punt A ligt in een gematigde en natte klimaatzone: de temperatuur is er aangenaam en er valt voldoende neerslag, wat gunstig is voor landbouw en dus voor bewoning. Punt B ligt in een gematigde maar droge klimaatzone. Door het gebrek aan neerslag biedt dat gebied minder kansen voor landbouw, waardoor het er dunbevolkt is."
+});
+
+buildOpenReveal(document.getElementById("exam-relief-1"), {
+  q: "Mumbai is dichtbevolkt, Tibet is dunbevolkt. Verklaar dit verschil aan de hand van het reliëf.",
+  hint: "Denk aan hoe makkelijk of moeilijk het is om in een vlak gebied versus een berggebied te wonen, bouwen en aan landbouw te doen.",
+  model: "Mumbai ligt in een vlak kustgebied. Dat maakt het gemakkelijk om er te wonen, te bouwen en aan landbouw te doen, waardoor het gebied dichtbevolkt is. Tibet is erg bergachtig, waardoor het niet gemakkelijk toegankelijk is: bouwen, verplaatsen en landbouw zijn er veel moeilijker, waardoor het gebied dunbevolkt is."
+});
+
+buildShortAnswer(document.getElementById("exam-relief-2"), {
+  q: "Welke fysischgeografische landschapsvormende laag verklaart hier vooral het verschil tussen Mumbai en Tibet?",
+  accepted: ["reliëf"]
+});
+
+buildShortAnswer(document.getElementById("exam-kort1"), {
+  image: "assets/img/africa_globe.png",
+  alt: "Satellietbeeld van Afrika vanuit de ruimte",
+  q: "Op welk continent ligt het gebied op deze foto?",
+  accepted: ["Afrika"]
+});
+
+buildShortAnswer(document.getElementById("exam-kort2"), {
+  image: "assets/img/globe3_americas.png",
+  alt: "Wereldbol met Noord- en Zuid-Amerika",
+  q: "Welk continent zie je hier afgebeeld? (Let op: het is één continent, geen twee.)",
+  accepted: ["Amerika"]
+});
+
+buildRanking(document.getElementById("exam-ranking"), {
+  q: "Rangschik deze landen van dunbevolkt naar dichtbevolkt.",
+  hint: "Gebruik de pijltjes om de volgorde te wijzigen.",
+  items: [
+    { id: "ijsland", label: "IJsland" },
+    { id: "rusland", label: "Rusland" },
+    { id: "frankrijk", label: "Frankrijk" },
+    { id: "belgie", label: "België" },
+    { id: "bangladesh", label: "Bangladesh" }
+  ],
+  order: ["ijsland", "rusland", "frankrijk", "belgie", "bangladesh"]
+});
+
+buildOpenReveal(document.getElementById("exam-open1"), {
+  q: "Leg uit hoe irrigatie ervoor zorgt dat een droog gebied als de Nijlvallei toch dichtbevolkt kan zijn.",
+  hint: "Denk aan wat een gebied nodig heeft voor landbouw, en waar irrigatiewater dat tekort aanvult.",
+  model: "Irrigatietechnieken voeren water aan naar gebieden waar van nature weinig neerslag valt. Daardoor kan er ondanks het droge klimaat toch landbouw bedreven worden. Dat zorgt voor voedselproductie en een inkomen, waardoor het gebied dichtbevolkt kan raken ook al biedt het klimaat op zich weinig kansen."
+});
+
+buildOpenReveal(document.getElementById("exam-open2"), {
+  q: "Waarom zijn gebieden zoals de Andes, Burundi en Rwanda dichtbevolkt, terwijl hoogte over het algemeen net een rem zet op bewoning?",
+  hint: "Kijk naar het klimaat van de omliggende laaggelegen gebieden. Wat verandert er als je hoger gaat?",
+  model: "In warme klimaatzones zijn de temperaturen op grote hoogte aangenamer en koeler dan in de hete, laaggelegen gebieden. Daardoor trekken die hooggelegen gebieden juist bevolking aan, ook al is reliëf normaal een hindernis voor bewoning."
+});
+
+buildOpenReveal(document.getElementById("exam-jf"), {
+  q: "Juist of fout, en verklaar je keuze: \"Elk warm gebied met veel neerslag is dichtbevolkt.\"",
+  hint: "Denk aan het Amazone- en Congobekken. Wat doet heel veel neerslag met de plantengroei?",
+  model: "Fout. Warme gebieden met heel veel neerslag, zoals het Amazone- en Congobekken, zijn net dunbevolkt. De dichte, weelderige plantengroei die daar ontstaat door de vele neerslag maakt menselijke activiteiten juist moeilijk."
+});
+
+buildOpenReveal(document.getElementById("exam-jf-grondstof"), {
+  q: "Juist of fout, en verklaar je keuze: \"Er is een duidelijke relatie tussen bevolkingsdichtheid en de aanwezigheid van grondstoffen.\"",
+  hint: "Denk aan Siberië en het noorden van Canada: rijk aan grondstoffen, maar hoe dicht bevolkt?",
+  model: "Fout. Siberië en het noorden van Canada zijn bijvoorbeeld erg rijk aan grondstoffen, maar toch dunbevolkt door het koude klimaat en het moeilijk bereikbare reliëf. Omgekeerd is België dichtbevolkt zonder veel grondstoffen. Klimaat, reliëf en bodem verklaren de bevolkingsspreiding beter dan grondstoffen alleen."
+});
+
+buildOpenReveal(document.getElementById("exam-open3"), {
+  q: "Waarom vallen de dichtstbevolkte gebieden vandaag niet meer overal samen met de vruchtbaarste landbouwstreken?",
+  hint: "Denk aan wat er sinds de 19de eeuw veranderde aan handel en transport, en waar steden daardoor groeiden.",
+  model: "Sinds de industriële revolutie in de 19de eeuw werden handel en transport steeds belangrijker. Daardoor groeiden vooral steden aan de kust, ook al lagen die niet altijd op de vruchtbaarste bodems. Zo raakten bevolkingsspreiding en landbouwstreken losser van elkaar."
+});
+
+buildShortAnswer(document.getElementById("exam-vak1"), {
+  q: "Welk vakwoord hoort bij deze omschrijving? \"Het gemiddeld aantal mensen dat per km² in een gebied woont.\"",
+  accepted: ["bevolkingsdichtheid"]
+});
+
+buildShortAnswer(document.getElementById("exam-vak2"), {
+  q: "Welk vakwoord hoort bij deze omschrijving? \"Een landschapslaag die door de natuur ontstaan is, zonder ingrijpen van de mens.\"",
+  accepted: ["fysischgeografisch", "fysischgeografische laag"]
+});
+
+buildShortAnswer(document.getElementById("exam-vak3"), {
+  q: "Welk vakwoord hoort bij deze omschrijving? \"Een landschapslaag die door de mens gemaakt of veranderd is.\"",
+  accepted: ["sociaalgeografisch", "sociaalgeografische laag"]
+});
+
+buildShortAnswer(document.getElementById("exam-vak4"), {
+  q: "Welk vakwoord hoort bij deze omschrijving? \"De plaats van iets ten opzichte van iets anders, bijvoorbeeld 'ten oosten van'.\"",
+  accepted: ["relatieve ligging"]
+});
+
+buildOpenReveal(document.getElementById("exam-uitdaging1"), {
+  q: "Bangladesh is een van de dichtst bevolkte landen ter wereld, ook al ligt het grootste deel van het land in een laaggelegen, overstromingsgevoelige rivierdelta. Verklaar dit aan de hand van minstens twee fysischgeografische factoren.",
+  hint: "Denk aan de bodem in een rivierdelta, en aan het water en klimaat die er beschikbaar zijn voor landbouw.",
+  model: "Een rivierdelta zoals in Bangladesh heeft een zeer vruchtbare bodem, doordat de rivier voortdurend sediment (slib) aanvoert. Er is ook overvloedig water beschikbaar voor irrigatie en rijstteelt, en het klimaat is er warm genoeg voor meerdere oogsten per jaar. Die combinatie van vruchtbare bodem, veel water en een gunstig klimaat biedt enorme kansen voor landbouw en dus voor een hoge bevolkingsdichtheid, ook al brengt de lage ligging overstromingsrisico met zich mee."
+});
+
+buildOpenReveal(document.getElementById("exam-uitdaging2"), {
+  q: "De Sahelzone, net ten zuiden van de Sahara, is een van de dunst bevolkte gebieden ter wereld. Welke fysischgeografische factoren zijn hier waarschijnlijk de oorzaak van?",
+  hint: "Kijk naar het klimaat van een gebied vlak naast een woestijn, en wat dat betekent voor bodem en plantengroei.",
+  model: "De Sahelzone heeft een droog, warm klimaat met weinig en onregelmatige neerslag, net onder de Sahara. Daardoor is de bodem er arm en weinig vruchtbaar, en is de natuurlijke plantengroei schaars. Die combinatie van een droog klimaat en een onvruchtbare bodem biedt weinig kansen voor landbouw, waardoor het gebied dunbevolkt is."
+});
+
+buildOpenReveal(document.getElementById("exam-uitdaging3"), {
+  q: "Vergelijk Nederland (meer dan 500 inwoners per km²) met Mongolië (ongeveer 2 inwoners per km²). Welke fysischgeografische factoren verklaren dit enorme verschil?",
+  hint: "Denk aan reliëf, bodem en klimaat in beide landen.",
+  model: "Nederland heeft een vlak reliëf, een vruchtbare bodem (onder andere poldergrond) en een gematigd, vochtig klimaat dat gunstig is voor landbouw, wat veel kansen biedt om te wonen en te werken. Mongolië heeft een droog, continentaal klimaat met extreme temperaturen, en een groot deel van het land bestaat uit steppe en woestijn met een minder vruchtbare bodem. Die combinatie biedt veel minder kansen voor landbouw en bewoning, waardoor het land dunbevolkt is."
+});
+
+buildOpenReveal(document.getElementById("exam-uitdaging4"), {
+  q: "Een rivier is een fysischgeografisch gegeven. Maar wat als die rivier via een dam wordt omgeleid om water naar landbouwvelden te sturen? Is dat dan nog steeds fysischgeografisch, of intussen sociaalgeografisch? Verklaar je antwoord.",
+  hint: "Kijk niet naar wat het is (water), maar naar hoe het zo geworden is.",
+  model: "Het water zelf, en de rivier zoals ze van nature ontstaan is, blijft fysischgeografisch. Maar het omleiden van de rivier via een dam is een ingreep van de mens, dus die aangepaste waterloop is op dat punt sociaalgeografisch. Je moet dus telkens nagaan of iets van nature zo is, of dat de mens eraan gesleuteld heeft."
+});
+
+buildOpenReveal(document.getElementById("exam-uitdaging5"), {
+  q: "Zuid-Nigeria heeft veel olie en aardgas én een relatief hoge bevolkingsdichtheid, terwijl Siberië ook veel grondstoffen heeft maar dunbevolkt is. Verklaar dit verschil door grondstoffen te combineren met minstens één andere fysischgeografische factor.",
+  hint: "Grondstoffen alleen verklaren de bevolkingsspreiding niet. Wat is het verschil in klimaat tussen Zuid-Nigeria en Siberië?",
+  model: "Grondstoffen alleen verklaren het verschil niet, want beide gebieden zijn er rijk aan. Het verschil zit in het klimaat: Zuid-Nigeria heeft een warm klimaat waarin mensen goed kunnen wonen en werken, ook rond de olie-industrie. Siberië heeft een koud klimaat, waardoor het er, ondanks de grondstoffen, veel minder aantrekkelijk is om te wonen. Grondstoffen kunnen bevolking dus enkel aantrekken als andere factoren zoals klimaat dat niet in de weg staan."
+});
+</script>
+
+</body>
+</html>
